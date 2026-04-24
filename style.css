@@ -1,0 +1,332 @@
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --accent-color: #38bdf8;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+header {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+}
+
+header.scrolled {
+    padding: 0.5rem 0;
+    background: rgba(15, 23, 42, 0.95);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+    text-align: center;
+    transition: var(--transition);
+}
+
+nav a {
+    margin: 0 1.5rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+.profile {
+    padding: 4rem 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: var(--transition);
+}
+
+header.scrolled .profile {
+    padding: 0;
+    margin: 0;
+}
+
+.profile img {
+    width: 180px;
+    height: 180px;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    border: 3px solid var(--accent-color);
+    padding: 5px;
+    object-fit: cover;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+    transition: var(--transition);
+}
+
+header.scrolled .profile img {
+    width: 0;
+    height: 0;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    border: none;
+}
+
+.profile h2 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+.profile h2 span {
+    color: var(--accent-color);
+}
+
+header.scrolled .profile h2,
+header.scrolled .profile ul,
+header.scrolled .social-links {
+    max-height: 0;
+    margin: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.profile ul {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.profile ul li:nth-child(3) {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.social-links {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.social-links a img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.social-links a img:hover {
+    opacity: 1;
+    transform: translateY(-8px) scale(1.1);
+}
+
+.profile-section {
+    padding: 5rem 10%;
+    background: var(--bg-color);
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.profile-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+}
+
+.profile-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+.profile-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 15px;
+}
+
+.profile-card p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.profile-card ul {
+    list-style: none;
+    color: var(--text-secondary);
+}
+
+.profile-card ul li {
+    margin-bottom: 1rem;
+}
+
+.profile-card ul li strong {
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.hobby-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.hobby-tags span {
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--accent-color);
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+#skills {
+    padding: 5rem 10%;
+    background: var(--card-bg);
+}
+
+.skill-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.skill-group {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill {
+    display: block;
+    margin: 1.5rem 0;
+}
+
+.skill-name {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 8px;
+    background: #0f172a;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-per {
+    height: 100%;
+    background: var(--accent-color);
+    border-radius: 4px;
+    position: relative;
+}
+
+#experiences {
+    padding: 5rem 10%;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.experience-item {
+    background: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+}
+
+.experience-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border-color: var(--accent-color);
+}
+
+.experience-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.exp-content {
+    padding: 1.5rem;
+}
+
+.experience-item h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.experience-item p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.experience-item a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-bottom: 1px solid transparent;
+}
+
+.experience-item a:hover {
+    border-bottom: 1px solid var(--accent-color);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+h2 span {
+    color: var(--accent-color);
+}
