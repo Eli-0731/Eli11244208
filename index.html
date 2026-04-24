@@ -38,6 +38,8 @@
         </div>
     </header>
 
+    
+
     <section id="personal-profile" class="profile-section">
         <div class="container">
             <h2>Personal <span>Profile</span></h2>
@@ -73,6 +75,60 @@
         </div>
     </section>
 
+    <section id="project-timeline" class="work-section">
+        <div class="container">
+            <h2>Project <span>Timeline</span></h2>
+            
+            <div class="timeline-nav">
+                <button class="tab-btn active" data-target="exp-junior">大三 專題階段</button>
+                <button class="tab-btn" data-target="exp-sophomore">大二 核心技術</button>
+                <button class="tab-btn" data-target="exp-freshman">大一 探索成長</button>
+            </div>
+
+            <div class="timeline-content-wrapper">
+                <div class="tab-panel active" id="exp-junior">
+                    <div class="work-card">
+                        <div class="work-header">
+                            <h3>聊天機器人專題 (Companion AI Bot)</h3>
+                        </div>
+                        <p>開發具備自然語言理解能力的情緒伴侶機器人。</p>
+                        <ul>
+                            <li>整合 Google Gemini API 與 n8n 自動化工作流。</li>
+                            <li>使用 ngrok 建立 Webhook 串接 LINE Messaging API。</li>
+                            <li>進行 Prompt Engineering 優化，實現更自然擬人的互動邏輯。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="exp-sophomore">
+                    <div class="work-card">
+                        <div class="work-header">
+                            <h3>SQL 後端資料庫專題</h3>
+                        </div>
+                        <p>專注於資料庫系統設計與後端邏輯實踐。</p>
+                        <ul>
+                            <li>設計並實作高效能的 SQL 資料庫結構。</li>
+                            <li>優化資料查詢效率與後端串接 API 邏輯。</li>
+                            <li>運用 Java 與 JSP 技術開發動態網頁系統。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="exp-freshman">
+                    <div class="work-card">
+                        <div class="work-header">
+                            <h3>校園與社團里程碑</h3>
+                        </div>
+                        <ul>
+                            <li><strong>管理學服務淨灘：</strong> 實踐環境永續 (SDGs) 價值，鍛鍊團隊組織與社會責任感。</li>
+                            <li><strong>熱舞社小成發：</strong> 參與大型舞台演出，在高壓練習中強化團隊協作與韌性。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="skills">
         <h2>My <span>Skills</span></h2>
         <div class="skill-container">
@@ -87,7 +143,7 @@
                     <div class="skill-bar"><div class="skill-per" style="width: 40%;"></div></div>
                 </div>
                 <div class="skill">
-                    <div class="skill-name">HTML / CSS </div>
+                    <div class="skill-name">HTML / CSS /js </div>
                     <div class="skill-bar"><div class="skill-per" style="width: 50%;"></div></div>
                 </div>
             </div>
@@ -142,7 +198,7 @@
     </section>
 
     <footer>
-        <p>© 2024 Guan-Xun Li. Built with Modern Tech Style.</p>
+        <p>© 2026 Guan-Xun Li. Built with Modern Tech Style.</p>
     </footer>
 
     <script>
@@ -154,6 +210,25 @@
                 header.classList.remove('scrolled');
             }
         });
+
+        // Tab 切換功能
+const tabBtns = document.querySelectorAll('.tab-btn');
+const tabPanels = document.querySelectorAll('.tab-panel');
+
+tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // 1. 移除所有按鈕的 active 狀態
+        tabBtns.forEach(b => b.classList.remove('active'));
+        // 2. 加入當前按鈕的 active 狀態
+        btn.classList.add('active');
+
+        // 3. 隱藏所有內容面板
+        tabPanels.forEach(p => p.classList.remove('active'));
+        // 4. 顯示對應的內容面板
+        const target = btn.getAttribute('data-target');
+        document.getElementById(target).classList.add('active');
+    });
+});
     </script>
 </body>
 </html>
