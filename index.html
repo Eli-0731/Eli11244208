@@ -152,7 +152,7 @@
                 <h3># Life & Interests</h3>
                 <div class="skill">
                     <div class="skill-name">Gaming </div>
-                    <div class="skill-bar"><div class="skill-per" style="width: 50%;"></div></div>
+                    <div class="skill-bar"><div class="skill-per" style="width: 70%;"></div></div>
                 </div>
                 <div class="skill">
                     <div class="skill-name">Anime </div>
@@ -160,7 +160,7 @@
                 </div>
                 <div class="skill">
                     <div class="skill-name">Sports</div>
-                    <div class="skill-bar"><div class="skill-per" style="width: 40%;"></div></div>
+                    <div class="skill-bar"><div class="skill-per" style="width: 50%;"></div></div>
                 </div>
             </div>
         </div>
@@ -211,20 +211,20 @@
             }
         });
 
-        // Tab 切換功能
+        
 const tabBtns = document.querySelectorAll('.tab-btn');
 const tabPanels = document.querySelectorAll('.tab-panel');
 
 tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-        // 1. 移除所有按鈕的 active 狀態
+        
         tabBtns.forEach(b => b.classList.remove('active'));
-        // 2. 加入當前按鈕的 active 狀態
+        
         btn.classList.add('active');
 
-        // 3. 隱藏所有內容面板
+        
         tabPanels.forEach(p => p.classList.remove('active'));
-        // 4. 顯示對應的內容面板
+        
         const target = btn.getAttribute('data-target');
         document.getElementById(target).classList.add('active');
     });
